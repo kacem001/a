@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Love ❤️ Press Everything!</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Playfair+Display:wght@400;600&family=Poppins:wght@300;400;500;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <!-- Floating Emojis Animation -->
+    <div class="hearts-container" id="floatingContainer"></div>
+
+    <!-- Animated Background Gradient -->
+    <div class="gradient-bg" id="backgroundGradient"></div>
+
+    <!-- Top Controls -->
+    <div class="top-controls">
+        <button class="control-btn" id="musicToggle">
+            <span class="btn-icon">🎵</span>
+            <span class="btn-text">Music</span>
+        </button>
+        <button class="control-btn" id="colorToggle">
+            <span class="btn-icon">🎨</span>
+            <span class="btn-text">Colors</span>
+        </button>
+        <button class="control-btn" id="surpriseBtn">
+            <span class="btn-icon">�</span>
+            <span class="btn-text">Surprise!</span>
+        </button>
+    </div>
+
+    <!-- Main Content Container -->
+    <div class="container">
+        <!-- Interactive Title -->
+        <div class="title-container">
+            <h1 class="main-title" id="mainTitle">
+                <span class="greeting-text" id="greetingText">Good Morning!</span>
+                <span class="love-text">My Beautiful Love</span>
+            </h1>
+            <button class="title-btn" id="changeMoodBtn">
+                <span>Change My Mood! 💫</span>
+            </button>
+        </div>
+
+        <!-- Interactive Message Card -->
+        <div class="message-card">
+            <div class="message-content" id="messageContent">
+                <p class="main-text">
+                    I made this super interactive just for you!
+                    Press ALL the buttons and see what happens! 🎉
+                </p>
+                <p class="main-text">
+                    Each button has a special surprise waiting for you...
+                    Go ahead, don't be shy! 💕
+                </p>
+            </div>
+
+            <!-- Button Grid -->
+            <div class="button-grid">
+                <button class="interactive-btn pink-btn" data-action="hearts">
+                    <span class="btn-emoji">💗</span>
+                    <span class="btn-label">Send Hearts</span>
+                </button>
+
+                <button class="interactive-btn purple-btn" data-action="stars">
+                    <span class="btn-emoji">⭐</span>
+                    <span class="btn-label">Make Stars</span>
+                </button>
+
+                <button class="interactive-btn orange-btn" data-action="confetti">
+                    <span class="btn-emoji">🎊</span>
+                    <span class="btn-label">Confetti!</span>
+                </button>
+
+                <button class="interactive-btn blue-btn" data-action="message">
+                    <span class="btn-emoji">💌</span>
+                    <span class="btn-label">Love Note</span>
+                </button>
+
+                <button class="interactive-btn green-btn" data-action="flowers">
+                    <span class="btn-emoji">🌸</span>
+                    <span class="btn-label">Flowers</span>
+                </button>
+
+                <button class="interactive-btn yellow-btn" data-action="sunshine">
+                    <span class="btn-emoji">☀️</span>
+                    <span class="btn-label">Sunshine</span>
+                </button>
+
+                <button class="interactive-btn red-btn" data-action="kiss">
+                    <span class="btn-emoji">💋</span>
+                    <span class="btn-label">Kiss</span>
+                </button>
+
+                <button class="interactive-btn teal-btn" data-action="sparkle">
+                    <span class="btn-emoji">✨</span>
+                    <span class="btn-label">Sparkles</span>
+                </button>
+            </div>
+
+            <!-- Counter Display -->
+            <div class="counter-display">
+                <p class="counter-text">
+                    Buttons pressed: <span id="buttonCounter">0</span>
+                    <span class="counter-emoji" id="counterEmoji">🎯</span>
+                </p>
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progressFill"></div>
+                </div>
+            </div>
+
+            <!-- Hidden Achievement -->
+            <div class="achievement" id="achievement">
+                <div class="achievement-content">
+                    <span class="achievement-icon">🏆</span>
+                    <p class="achievement-text">Achievement Unlocked!</p>
+                    <p class="achievement-subtitle" id="achievementText"></p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Secret Message Card (Hidden) -->
+        <div class="secret-card" id="secretCard">
+            <div class="secret-content">
+                <h2 class="secret-title">You Found The Secret! 🎉</h2>
+                <p class="secret-text" id="secretText"></p>
+                <button class="secret-close" id="closeSecret">Close ✖</button>
+            </div>
+        </div>
+
+        <!-- Special Final Message (Unlocked) -->
+        <div class="final-message" id="finalMessage">
+            <div class="final-content">
+                <h2 class="final-title">🎊 You Pressed Everything! 🎊</h2>
+                <p class="final-text">
+                    You're so curious and playful, and I absolutely LOVE that about you!
+                    Thank you for exploring every surprise I created for you. 💕
+                </p>
+                <p class="final-text">
+                    You make my world so much brighter, and I hope this made you smile
+                    as much as you make me smile every single day!
+                </p>
+                <div class="final-hearts">
+                    ❤️ 💕 💖 💗 💓 💝 💘 💞
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hidden Audio Element - Romantic Piano Music -->
+    <audio id="backgroundMusic" loop preload="auto">
+        <source src="https://www.bensound.com/bensound-music/bensound-romanticmoment.mp3" type="audio/mpeg">
+        <source src="https://cdn.pixabay.com/audio/2022/03/10/audio_4deafc42d2.mp3" type="audio/mpeg">
+    </audio>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
